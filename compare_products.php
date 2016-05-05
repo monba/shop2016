@@ -10,7 +10,6 @@ if(isset($_GET['add'])){
 	$id = $_GET['add'];
 	$qt = mysql_query("SELECT productid, quantity FROM tb_products WHERE productid='$id'");
 	while($qt_row = mysql_fetch_assoc($qt)){
-		echo '<script language="javascript">alert("asdasd хангалттай байхгүй байна!"); document.location="index.php";</script>';
 		if( $qt_row['quantity'] != $_SESSION['cart2_'.$_GET['add']] && $qt_row['quantity'] > 0){
 			$_SESSION['cart2_'.$_GET['add']]+='1';
 			header("Location: compare_products.php"); 
@@ -85,9 +84,9 @@ if(isset($_GET['delete'])){
 								foreach($_SESSION as $name => $value){
 									if($value > 0)
 									{
-										if(substr($name, 0, 5) == 'cart2_')
+										if(substr($name, 0, 6) == 'cart2_')
 										{
-											$id = substr($name, 5, (strlen($name)-5));
+											$id = substr($name, 6, (strlen($name)-6));
 											$get = mysql_query("SELECT * FROM tb_products WHERE productID='$id'");
 											while($get_row = mysql_fetch_assoc($get)){
 												$sub = $get_row['price'] * $value;
