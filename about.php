@@ -18,7 +18,7 @@ include('logcheck.php');
 				
                 <div class="col-lg-12 col-md-12 col-sm-12">
                 	<div class="breadcrumbs">
-                    	<p><a href="#">Нүүр</a> <i class="icons icon-right-dir"></i>Бидний тухай</p>
+                    	<p><a href="#">Нүүp</a> <i class="icons icon-right-dir"></i>Бидний тухай</p>
                     </div>
                 </div>
                 
